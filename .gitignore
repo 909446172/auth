@@ -1,6 +1,10 @@
 #####
 */**/.gitignore
 **/mvnw*
-**/.md
+**/*.md
 !*/**/src
 !**/pom.xml
+**/target
+**/*.mvn
+**/*.idea
+**/*.iml
