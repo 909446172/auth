@@ -54,17 +54,21 @@ public class AuthenticationServerConfig extends AuthorizationServerConfigurerAda
         clients.inMemory()
                 .withClient("admin")
                 .secret(passwordEncoder.encode("admin123456"))
-                .accessTokenValiditySeconds(3600)
+                .accessTokenValiditySeconds(200)
                 .refreshTokenValiditySeconds(864000)
 //                .redirectUris("http://www.baidu.com")
 //                .redirectUris("http://localhost:9501/login") //单点登录时配置
                 .autoApprove(true) //自动授权配置
                 .scopes("all")
                 .authorizedGrantTypes("authorization_code","password","refresh_token");
-
     }
 
-
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+        //允许表单认证
+        oauthServer.allowFormAuthenticationForClients();
+        oauthServer.checkTokenAccess("permitAll()");
+    }
 
 
 }
