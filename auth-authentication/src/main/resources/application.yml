@@ -5,3 +5,14 @@ spring:
     url: jdbc:mysql://localhost:3306/auth?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
+  application:
+    name: authentication
+eureka:
+  instance:
+    hostname: auth
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://peer1:9000/eureka/
+    enabled: true
+

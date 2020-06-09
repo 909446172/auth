@@ -60,7 +60,7 @@ public class AuthClient {
 
     public Map checkToken(String token) {
         HttpEntity<MultiValueMap<String, String>> multiValueMapHttpEntity = new HttpEntity<>(getHeader());
-        return restTemplate.exchange(String.format("http://%s%s?%s", authClientConfig.getUrl(), "oauth/check_token", "token={token}"), HttpMethod.GET, multiValueMapHttpEntity, Map.class, token)
+        return restTemplate.exchange(String.format("http://%s%s?%s", authClientConfig.getUrl(), "/oauth/check_token", "token={token}"), HttpMethod.GET, multiValueMapHttpEntity, Map.class, token)
                 .getBody();
 
     }
