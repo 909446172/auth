@@ -10,10 +10,7 @@ leve:
     client:
       id: admin
       secret: admin123456
-      url: auth
-#      url: localhost:8080
+#      url: auth
+      url: localhost:8080
       tokenHead: Bearer
-security:
-  oauth2:
-    resource:
-      token-info-uri:
+

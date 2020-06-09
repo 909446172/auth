@@ -19,6 +19,11 @@ import static java.util.Collections.singletonList;
 import static org.springframework.http.MediaType.APPLICATION_FORM_URLENCODED;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
+/**
+ * @author zyy
+ * @version 1.0.0
+ * @date 2020/6/9 10:46
+ */
 @Component
 @AllArgsConstructor
 public class AuthClient {
